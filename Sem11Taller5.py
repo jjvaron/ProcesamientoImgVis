@@ -3,7 +3,7 @@
 # Taller 5
 # Realizado por Jelitza Varón Heredia y Andrea Elneser Tejeda
 #
-
+import sys
 
 import numpy as np
 import cv2
@@ -23,8 +23,8 @@ objpoints = []  # 3d point in real world space
 imgpoints = []  # 2d points in image plane.
 
 # path = 'D:/Python/tablero'
-path = 'D:/Documentos_Hp/Desktop/tablero'
-path_file = os.path.join(path, 'tablero*.PNG')
+path = sys.argv[1]
+path_file = os.path.join(path, sys.argv[2])
 
 images = glob.glob(path_file)
 
@@ -54,7 +54,7 @@ ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.sh
 print(mtx)
 print(dist)
 
-file_name = 'CamaraPC_B.json'
+file_name = sys.argv[4]
 json_file = os.path.join(path, file_name)
 
 data = {
@@ -66,7 +66,7 @@ data = {
     'pan': 0
 }
 
-# file_name = 'CamaraPC_A.json'
+# file_name = sys.argv[4]
 # data = {
 #     'K': mtx.tolist(),
 #     'distortion': dist.tolist(),
