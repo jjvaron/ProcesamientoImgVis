@@ -2,9 +2,9 @@
 # Profesores: Ing. Julián Quiroga S. e Ing. Nestor Ribero
 # Taller 5
 # Realizado por Jelitza Varón Heredia y Andrea Elneser Tejeda
-#
-import sys
 
+
+import sys
 import numpy as np
 import cv2
 import glob
